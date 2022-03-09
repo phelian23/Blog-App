@@ -1,1 +1,28 @@
-<h1>Show users<h1>
+<div class="user-cont">
+  <div class="user-img">
+    <%= image_tag user_img(@user) %>
+  </div>
+  <div class="user-det border">
+    <h2><%= @user.name%></h2>
+    <p class="bottom-right">Number of posts: <%= num_of_post(@user) %></p>
+  </div>
+</div>
+
+<div class="user-det2 border">
+  <h2>Bio</h2>
+  <p class="user-bio"><%= @user.bio%></p>
+</div>
+
+<% @user.recent_posts.each do |post| %>
+  <div class="post-cont border">
+    <h2>Post #<%= post.id %> : <%= post.title%></h2>
+    <p><%= post.text%></p>
+    <p class="bottom-right">Comment: <%= num_of_comment(post) %>,  <span>Likes: <%= num_of_likes(post)%></span></p>
+  </div>
+<%end%>
+
+<div class="button-cont">
+  <button>
+    <%= link_to "See all posts", user_posts_path(@user), {:class => "button_class"} %>
+  </button>
+</div>
