@@ -1,17 +1,21 @@
 <div>
     <div class="user-cont">
-        <div class="user-img">
-      <%= image_tag user_img(@user) %>
-    </div>
+      <div class="user-img">
+        <%= image_tag user_img(@user) %>
+      </div>
     <div class="user-det border">
       <h2><%= @user.name%></h2>
       <p class="bottom-right">Number of posts: <%= num_of_post(@user) %></p>
     </div>
   </div>
 
+<div class="button-div create-post-link-container">
+  <%= link_to "Create new post", new_user_post_path %>
+</div>
+
 <% @posts.each do |post| %>
   <div class="post-cont border">
-     <%= link_to "#{post.title}", user_post_path(@user.id, post.id), class:"anything" %> 
+     <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %> 
      <h3><%= post.text%></h3>
       <p class="bottom-right">comments: <%= num_of_comment(post) %> <span>likes: <%= num_of_likes(post) %></span></p>
   </div>
