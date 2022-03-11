@@ -3,12 +3,16 @@
   <h3>Post: #<%= @post.id %> <br /> <%= @post.title %> by <span><%= @post.user.name %></span></h3>
   <p class = "bottom-right">Comment <%= num_of_comment(@post)%>,  <span>Likes <%= num_of_likes(@post)%></span></p>
 </div>
+  <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+    <%= form.submit "Like "%>
+  <% end %>
   <p><%= @post.text %></p>  
 </div>
-</div>
-<div>
 <div class="comments border">
 <% @comments.each do |comment| %>
    <p><%= comment.user.name%>: <%= comment.text%></p>
 <%end%>
+</div>
+<div class="comment-text">
+<%= render partial: "add_comments", local: { post: @post } %>
 </div>
