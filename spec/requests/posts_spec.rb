@@ -11,10 +11,6 @@ RSpec.describe 'Posts', type: :request do
     it 'Test if action rendered a correct template' do
       expect(response).to render_template('index')
     end
-
-    it 'Test if correct placeholder is shown' do
-      expect(response.body).to include('Posts index...')
-    end
   end
 
   describe 'GET /show' do
@@ -26,10 +22,6 @@ RSpec.describe 'Posts', type: :request do
 
     it 'Test if action rendered a correct template' do
       expect(response).to render_template('show')
-    end
-
-    it 'Test if correct placeholder is shown' do
-      expect(response.body).to include('Show post')
     end
   end
 end
