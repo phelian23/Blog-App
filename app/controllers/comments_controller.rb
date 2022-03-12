@@ -13,9 +13,9 @@ class CommentsController < ApplicationController
     @new_comment.post_id = @post.id
     @new_comment.update_comments_counter
     if @new_comment.save
-      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", notice: 'Success!'
+      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", notice: 'Comment created successfully!'
     else
-      render :new, alert: 'Error occured!'
+      render :new, alert: 'Error occured! Please try again'
     end
   end
 
