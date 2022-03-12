@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
-    @comments = @post.comments
+    @comments = @post.comments.includes(:comments)
   end
 
   def new
@@ -22,9 +22,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if @new_post.save
-          redirect_to "/users/#{@new_post.user.id}/posts/", notice: 'Success!'
+          redirect_to "/users/#{@new_post.user.id}/posts/", notice: 'Comment created successfully!'
         else
-          render :new, alert: 'Error occured!'
+          render :new, alert: 'Error occured! Please try again'
         end
       end
     end
