@@ -78,3 +78,5 @@ gem 'rails-controller-testing'
 gem 'ffi'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'devise'
