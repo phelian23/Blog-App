@@ -11,7 +11,9 @@
 <div class="comments border">
 <% @comments.each do |comment| %>
   <p><%= comment.user.name%>: <%= comment.text%></p>
-
+<% if can? :destroy, comment %>
+    <%= button_to 'Delete Comment', "/posts/:post_id/comments/#{params[:id]}", method: :delete, params: { comment_id: comment.id} %>
+  <%end%>
 <%end%>
 </div>
 <div class="comment-text">
