@@ -15,9 +15,10 @@
 
 <% @posts.each do |post| %>
   <div class="post-cont border">
-     <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %> 
-     <h3><%= post.text%></h3>
-      <p class="bottom-right">comments: <%= num_of_comment(post) %> <span>likes: <%= num_of_likes(post) %></span></p>
+    <%= link_to "#{post.title}", user_post_path(@user.id, post.id) %> 
+    <h3><%= post.text%></h3>
+    
+    <p class="bottom-right">comments: <%= num_of_comment(post) %> <span>likes: <%= num_of_likes(post) %></span></p>
   </div>
   <div class="comments border">
     <% post.recent_comments.each do |comment| %>

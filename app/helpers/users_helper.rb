@@ -4,7 +4,7 @@ module UsersHelper
     user_avatars << '/assets/user_img_1.webp'
     user_avatars << '/assets/user_img_2.webp'
     user_avatars << '/assets/user_img_3.png'
-    user_avatars[user.id - 1]
+    user.photo.present? ? user.photo : user_avatars.sample
   end
 
   def num_of_post(user)
