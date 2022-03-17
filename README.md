@@ -45,7 +45,7 @@ To get a local copy up and running follow these simple example steps.
 - Run rspec spec to run all the test cases, and
 - Run rspec spec/name_of_test_file.rb to run test cases individually.
 
-## Author
+## Authors
 
 👤 **Oluwafemi Awoyemi**
 
@@ -53,6 +53,12 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@femikola23](https://twitter.com/femikola23)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/oluwafemi-awoyemi/)
 - AngelList: [oluwafemi-awoyemi](https://angel.co/u/oluwafemi-awoyemi)
+
+👤 **Aku Khan**
+
+- GitHub: [@aakbarkhan](https://github.com/aakbarkhan)
+- Twitter: [@aaku_mdakbar](https://twitter.com/aaku_mdakbar)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/akuu-khan/)
 
 ## 🤝 Contributing
 

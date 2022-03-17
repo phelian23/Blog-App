@@ -3,8 +3,8 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 250 }
 
   belongs_to :user
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   def update_posts_counter
     user.increment!(:posts_counter)
