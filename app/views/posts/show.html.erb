@@ -6,7 +6,7 @@
   <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
     <%= form.submit "Like "%>
   <% end %>
-  <p><%= @post.text %></p>  
+  <p><%= @post.text %></p>
 </div>
 <div class="comments border">
 <% @comments.each do |comment| %>
