@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe 'User #Show', type: :feature do
   describe 'shows users' do
     before(:each) do
-      @user1 = User.create(name: 'Jumoke', bio: 'Developer', email: 'jumy@example.com', password: 'password', posts_counter: 0, confirmed_at: Time.now)
-      @user2 = User.create(name: 'Shade', bio: 'Dancer', email: 'shaddy@example.com', password: 'password', posts_counter: 0, confirmed_at: Time.now)
+      @user1 = User.create(name: 'Jumoke', bio: 'Developer', email: 'jumy@example.com', password: 'password',
+                           posts_counter: 0, confirmed_at: Time.now)
+      @user2 = User.create(name: 'Shade', bio: 'Dancer', email: 'shaddy@example.com', password: 'password',
+                           posts_counter: 0, confirmed_at: Time.now)
 
       visit root_path
       fill_in 'Email', with: 'jumy@example.com'

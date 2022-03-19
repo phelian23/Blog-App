@@ -29,4 +29,4 @@
 #      expect(subject.recent_posts).to eq(subject.posts.last(3))
 #    end
 #  end
-#end
+# end

@@ -2,8 +2,10 @@ require 'rails_helper'
 
 describe 'user post index page tests', type: :feature do
   before :each do
-    @user1 = User.create(name: 'Shakiru', bio: 'Mechanic', email: 'user1@example.com', password: 'password', posts_counter: 0, confirmed_at: Time.now)
-    @user2 = User.create(name: 'Jinadu', bio: 'Developer', email: 'user2@example.com', password: 'password', posts_counter: 0, confirmed_at: Time.now)
+    @user1 = User.create(name: 'Shakiru', bio: 'Mechanic', email: 'user1@example.com', password: 'password',
+                         posts_counter: 0, confirmed_at: Time.now)
+    @user2 = User.create(name: 'Jinadu', bio: 'Developer', email: 'user2@example.com', password: 'password',
+                         posts_counter: 0, confirmed_at: Time.now)
     @post1 = Post.create(title: 'First Post', text: 'Hello', comments_counter: 0, likes_counter: 0, user: @user1)
     @post2 = Post.create(title: 'Second Post', text: 'How are you', comments_counter: 0, likes_counter: 0, user: @user1)
     @post3 = Post.create(title: 'Third Post', text: 'Hi', comments_counter: 0, likes_counter: 0, user: @user1)
