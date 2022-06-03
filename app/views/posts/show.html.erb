@@ -1,1 +1,21 @@
-<h1>Show posts<h1>
+<div class="user-det3 border">
+  <div class="user-post">
+  <h3>Post: #<%= @post.id %> <br /> <%= @post.title %> by <span><%= @post.user.name %></span></h3>
+  <p class = "bottom-right">Comment <%= num_of_comment(@post)%>,  <span>Likes <%= num_of_likes(@post)%></span></p>
+</div>
+  <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+    <%= form.submit "Like "%>
+  <% end %>
+  <p><%= @post.text %></p>
+</div>
+<div class="comments border">
+<% @comments.each do |comment| %>
+  <p><%= comment.user.name%>: <%= comment.text%></p>
+<% if can? :destroy, comment %>
+    <%= button_to 'Delete Comment', "/posts/:post_id/comments/#{params[:id]}", method: :delete, params: { comment_id: comment.id} %>
+  <%end%>
+<%end%>
+</div>
+<div class="comment-text">
+<%= render partial: "add_comments", local: { post: @post } %>
+</div>
